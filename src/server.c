@@ -6,7 +6,7 @@
 /*   By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 14:26:08 by sabdulba          #+#    #+#             */
-/*   Updated: 2024/12/14 14:55:58 by sabdulba         ###   ########.fr       */
+/*   Updated: 2024/12/14 15:59:03 by sabdulba         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	handle_signal(int signum, siginfo_t *info, void *params)
 {
 	static int		i;
 	static int		pid;
-	static char 	c;
+	static char		c;
 
 	(void)params;
 	if (pid == 0)
@@ -48,14 +48,13 @@ void	handle_signal(int signum, siginfo_t *info, void *params)
 	kill(pid, SIGUSR2);
 }
 
-
 int	main(void)
 {
 	struct sigaction	signals;
-	
+
 	ft_printf("Server PID: %d\n", getpid());
 	sigemptyset(&signals.sa_mask);
-	signals.sa_flags = SA_RESTART | SA_SIGINFO;;
+	signals.sa_flags = SA_RESTART | SA_SIGINFO;
 	signals.sa_sigaction = handle_signal;
 	sigaction(SIGUSR1, &signals, NULL);
 	sigaction(SIGUSR2, &signals, NULL);

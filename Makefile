@@ -6,7 +6,7 @@
 #    By: sabdulba <sabdulba@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/13 14:26:27 by sabdulba          #+#    #+#              #
-#    Updated: 2024/12/14 14:40:46 by sabdulba         ###   ########.fr        #
+#    Updated: 2024/12/14 16:57:59 by sabdulba         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,5 +70,6 @@ fclean: clean
 	$(RM) $(OBJ_DIR)
 	$(RM) $(LIBFT_DIR)/libft.a
 	$(RM) $(LIBFT_DIR)
+	$(RM) client server
 
 re: fclean all
